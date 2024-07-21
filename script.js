@@ -18,5 +18,26 @@ function getUserChoice() {
   return userPrompt;
 }
 
-console.log(getComputerChoice());
-console.log(getUserChoice());
+let userScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == computerChoice) {
+    console.log("ITS A TIE!");
+    return;
+  } else if (
+    (humanChoice == "rock" && computerChoice == "scissors") ||
+    (humanChoice == "paper" && computerChoice == "rock") ||
+    (humanChoice == "scissors" && computerChoice == "paper")
+  ) {
+    userScore += 1;
+    console.log(
+      `YOU WON!! ${humanChoice} BEATS ${computerChoice}\nScore ${userScore}-${computerScore}`
+    );
+  } else {
+    computerScore += 1;
+    console.log(
+      `YOU LOST. ${computerChoice} BEATS ${humanChoice}\nScore ${userScore}-${computerScore}`
+    );
+  }
+}
