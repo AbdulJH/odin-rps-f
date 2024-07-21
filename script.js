@@ -41,3 +41,22 @@ function playRound(humanChoice, computerChoice) {
     );
   }
 }
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    playRound(getUserChoice(), getComputerChoice());
+  }
+  checkWinner(userScore, computerScore);
+}
+
+function checkWinner(userPoints, computerPoints) {
+  if (userPoints == computerPoints) {
+    console.log(`TIE GAME. FINAL SCORE: ${userPoints}-${computerPoints}`);
+  } else if (userPoints > computerPoints) {
+    console.log(`YOU WON THE GAME. FINAL SCORE: ${userPoints}-${computerPoints}`);
+  } else {
+    console.log(`YOU LOST THE GAME. FINAL SCORE: ${userPoints}-${computerPoints}`);
+  }
+}
+
+playGame();
