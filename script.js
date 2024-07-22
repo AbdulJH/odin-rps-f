@@ -61,7 +61,6 @@ function endGame() {
   const score = document.querySelector(".score");
   const gameProgress = document.querySelector(".gameProgress");
 
-  // Ensure the variables are accessible
   if (!score || !gameProgress) {
     console.error("Score or gameProgress element not found.");
     return;
@@ -92,7 +91,6 @@ function playAgain() {
     resetGame();
     enableGame();
   } else if (userResponse === "no") {
-    // No additional action needed here as the game is already disabled
   } else {
     alert("INVALID RESPONSE... TRY AGAIN");
     playAgain();
